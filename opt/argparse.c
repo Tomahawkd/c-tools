@@ -54,6 +54,7 @@ void getopt(const OPTION *options, int options_length,
 
             if (option == NULL) {
                 opt->action = ACTION_ERR;
+                opt->err_reason = "Invalid param";
                 return;
             }
 
@@ -93,7 +94,6 @@ void getopt(const OPTION *options, int options_length,
     opt->offset = i;
     opt->action = ACTION_ADDITIONAL_PROCEED;
     opt->err_reason = "";
-    opt->offset = argc;
     return;
 
     finish:
