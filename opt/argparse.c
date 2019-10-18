@@ -2,7 +2,7 @@
 // Created by Ghost on 2019/9/19.
 //
 
-#include "argparse.h"
+#include "opt/argparse.h"
 
 
 static const OPTION *get_from_name(const OPTION *OPTION_ARRAY, int array_length, const char *str) {
@@ -32,9 +32,9 @@ static void get_value(int *index, const char *argv[], int count, const char **va
     }
 }
 
-void getopt(const OPTION *options, int options_length,
-            int argc, const char *argv[],
-            void *data, OPT_RESULT *opt) {
+void parse_arg(const OPTION *options, int options_length,
+               int argc, const char **argv,
+               void *data, OPT_RESULT *opt) {
 
     int i;
     const OPTION *option;

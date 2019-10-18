@@ -59,7 +59,7 @@ typedef struct {
  * @param opt parsed args value
  * this could be everything or a NULL
  */
-void getopt(const OPTION *options, int options_length, int argc, const char* argv[], void *data, OPT_RESULT *opt);
+void parse_arg(const OPTION *options, int options_length, int argc, const char **argv, void *data, OPT_RESULT *opt);
 
 void print_arg_description(const OPTION *options, int options_length);
 

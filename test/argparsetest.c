@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "argparse.h"
+#include "opt/argparse.h"
 
 OPT_STATE help_func(const char **args, int count, void *data);
 
@@ -37,7 +37,7 @@ void argparse_test(int argc, char *argv[]) {
 
     OPT_RESULT result;
     char data[] = "test";
-    getopt(options, 2, argc, (const char **) argv, data, &result);
+    parse_arg(options, 2, argc, (const char **) argv, data, &result);
 
     if (result.action == ACTION_ERR || result.action == ACTION_USER_ERR)
         printf("opt err message: %s\n", result.err_reason);
