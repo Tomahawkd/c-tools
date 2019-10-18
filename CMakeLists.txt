@@ -3,8 +3,12 @@ project(tools C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(argparse opt/argparse.c opt/argparsetest.c)
-target_include_directories(argparse PRIVATE include/opt)
+include_directories(include)
 
-add_executable(tools main.c)
-target_include_directories(tools PRIVATE include)
+set(ARG_SRC)
+aux_source_directory(opt ARG_SRC)
+add_executable(argparsetest ${ARG_SRC} test/argparsetest.c)
+
+set(RAND_SRC)
+aux_source_directory(random RAND_SRC)
+add_executable(randomtest ${RAND_SRC} test/randomtest.c)
