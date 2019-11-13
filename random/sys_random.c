@@ -25,11 +25,6 @@ void getrandombits(uint8_t *result, uint32_t length) {
     uint8_t byte;
     uint32_t offset;
 
-# ifdef _WIN32
-#include <time.h>
-    srand(time(NULL));
-# endif
-
     while(offset < length) {
 # ifdef _WIN32
         result[offset] = rand();
